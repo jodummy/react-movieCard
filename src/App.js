@@ -2,36 +2,33 @@ import React, { Component } from 'react';
 import './App.css';
 import Movie from './Movie.js';
 
-const moviesTitle =[
-  "심슨",
-  "마지",
-  "바트",
-  "리사",
-  "메기"
-]
-
-const movieImg= [
-"http://m.photoviewer.naver.com/blog?listUrl=https%3A%2F%2Fm.blog.naver.com%2FPostView.nhn%3FblogId%3Dffung347%26logNo%3D50041886878&imgId=17&host=https%3A%2F%2Fm.blog.naver.com%2Fphotoviewer&historyBack=true&blogId=ffung347&logNo=50041886878#main/17",
-"http://m.photoviewer.naver.com/blog?listUrl=https%3A%2F%2Fm.blog.naver.com%2FPostView.nhn%3FblogId%3Dffung347%26logNo%3D50041886878&imgId=59&host=https%3A%2F%2Fm.blog.naver.com%2Fphotoviewer&historyBack=true&blogId=ffung347&logNo=50041886878#main/59",
-"http://m.photoviewer.naver.com/blog?listUrl=https%3A%2F%2Fm.blog.naver.com%2FPostView.nhn%3FblogId%3Dffung347%26logNo%3D50041886878&imgId=1&host=https%3A%2F%2Fm.blog.naver.com%2Fphotoviewer&historyBack=true&blogId=ffung347&logNo=50041886878#main/1",
-"http://m.photoviewer.naver.com/blog?listUrl=https%3A%2F%2Fm.blog.naver.com%2FPostView.nhn%3FblogId%3Dffung347%26logNo%3D50041886878&imgId=53&host=https%3A%2F%2Fm.blog.naver.com%2Fphotoviewer&historyBack=true&blogId=ffung347&logNo=50041886878#main/53",
-"http://m.photoviewer.naver.com/blog?listUrl=https%3A%2F%2Fm.blog.naver.com%2FPostView.nhn%3FblogId%3Dffung347%26logNo%3D50041886878&imgId=57&host=https%3A%2F%2Fm.blog.naver.com%2Fphotoviewer&historyBack=true&blogId=ffung347&logNo=50041886878#main/57"
-
-
-
-
-
+const movies = [
+  {
+    title: "심슨",
+    poster: "이미지 미정"
+  }, {
+    title: "마지",
+    poster: "이미지 미정"
+  }, {
+    title: "바트",
+    poster: "이미지 미정"
+  }, {
+    title: "리사",
+    poster: "이미지 미정"
+  }, {
+    title: "메기",
+    poster: "이미지 미정"
+  }
 ]
 
 class App extends Component {
   render() {
     return (
       <div id="app">
-        <Movie title={moviesTitle[0]} poster={movieImg[0]}/>
-        <Movie title={moviesTitle[1]} poster={movieImg[1]}/>
-        <Movie title={moviesTitle[2]} poster={movieImg[2]}/>
-        <Movie title={moviesTitle[3]} poster={movieImg[3]}/>
-        <Movie title={moviesTitle[4]} poster={movieImg[4]}/>
+        {movies.map(movie => {
+          return <Movie title={movie.title} poster={movie.poster} />
+        })}
+
       </div>
     );
   }
